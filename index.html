@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Monitoring Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>💧 Water Monitoring Dashboard</h1>
+
+  <div class="container">
+    <h3>Live Data</h3>
+    <div class="live-data-grid">
+      <div class="live-box">🌡️ Temperature: <span id="temperature">--</span> °C</div>
+      <div class="live-box">🚰 Water Consumed: <span id="waterConsumed">--</span> L</div>
+      <div class="live-box">🧪 pH Level: <span id="pH">--</span></div>
+      <div class="live-box">🔬 TDS: <span id="tds">--</span> ppm</div>
+      <div class="live-box">💧 Turbidity: <span id="turbidity">--</span> NTU</div>
+      <div class="live-box">🧴 Chlorine: <span id="chlorine">--</span> mg/L</div>
+      <div class="live-box" id="safetyStatusBox">🔒 Safe Level: <span id="safetyStatus">--</span></div>
+      <div class="live-box" id="tankLevelBox">🛢️ Tank Level: <span id="tankLevel">--</span></div>
+    </div>
+
+    <h3>Water Consumption Bill</h3>
+    <div class="billing-box">
+      <div>
+       <p><strong>Total Water Consumed:</strong> <span id="totalWater">--</span> L</p>
+       <p><strong>Total Bill Amount:</strong> ₹<span id="billAmount">--</span></p>
+      </div>
+     <button id="payButton">💳 Pay Now</button>
+    </div>
+
+    <h3>Graphs</h3>
+    <div class="chart-container">
+      <div class="chart-box">
+        <div class="chart-header">
+          <label for="parameterSelect">📊 Parameter:</label>
+          <select id="parameterSelect">
+            <option value="temperature" selected>Temperature</option>
+            <option value="waterConsumed">Water Consumed</option>
+            <option value="pH">pH Level</option>
+            <option value="tds">TDS</option>
+            <option value="turbidity">Turbidity</option>
+            <option value="chlorine">Chlorine</option>
+          </select>
+        </div>
+        <canvas id="dataChart"></canvas>
+      </div>
+
+      <div class="chart-box"><canvas id="barChart"></canvas></div>
+      <div class="chart-box"><canvas id="pieChart"></canvas></div>
+    </div>
+
+    <!-- Mute/Unmute Button -->
+    <div class="mute-control">
+      🔈 Audio Alerts: <button id="muteButton">🔊 Unmute</button>
+    </div>
+  </div>
+
+  <audio id="alertSound" src="alert.mp3" preload="auto"></audio>
+  <script src="js/script.js"></script>
+</body>
+</html>

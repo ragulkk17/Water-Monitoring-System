@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+    margin: auto;
+    padding: 20px;
+}
+
+.live-data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.live-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+/* Safety status visual indicator */
+#safetyStatusBox.safe {
+    border-left: 8px solid green;
+    background-color: #e7fbe7;
+}
+
+#safetyStatusBox.unsafe {
+    border-left: 8px solid red;
+    background-color: #fde7e7;
+}
+
+/* Tank level visual fill backgrounds */
+#tankLevelBox.empty {
+    background: linear-gradient(to top, #ccc 30%, #fff 30%);
+}
+
+#tankLevelBox.half {
+    background: linear-gradient(to top, #00bfff 50%, #fff 50%);
+}
+
+#tankLevelBox.full {
+    background: linear-gradient(to top, #00bfff 100%, #00bfff 0%);
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 35vw;
+    min-width: 350px;
+    max-width: 400px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chart-box:hover {
+    transform: scale(1.05);
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+}
+
+.chart-header label {
+    font-weight: bold;
+}
+
+.chart-header select {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.mute-control {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#muteButton {
+    padding: 8px 14px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#muteButton:hover {
+    background-color: #0056b3;
+}
+
+.billing-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 16px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.billing-box p {
+    margin: 6px 0;
+}
+
+#payButton {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#payButton:hover {
+    background-color: #218838;
+}
